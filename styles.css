@@ -154,6 +154,31 @@ header .logo img {
 }
 
 /* Hero Section */
+section[aria-labelledby="hero-title"] {
+  background-image: url('assets/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative; /* Needed for absolute positioning of overlay */
+  z-index: 1; /* Ensure content is above background */
+}
+
+section[aria-labelledby="hero-title"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay, 70% opacity */
+  z-index: 2; /* Overlay should be above background image */
+}
+
+.hero-grid {
+  position: relative; /* Ensure hero-grid content is above the overlay */
+  z-index: 3;
+}
+
 .hero-grid {
   display: flex;
   flex-direction: column;
@@ -165,17 +190,7 @@ header .logo img {
   padding-top: 50px; /* Adjust for header */
 }
 
-.hero-grid::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle at center, rgba(16, 185, 129, 0.1) 0%, rgba(10, 10, 10, 0) 70%);
-  transform: translate(-50%, -50%);
-  z-index: -1;
-}
+/* Original hero-grid::before radial gradient removed by Gilfoyle */
 
 .hero-grid h1 {
   font-size: 3.5rem;
