@@ -170,8 +170,8 @@ section[aria-labelledby="hero-title"]::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay, 70% opacity */
-  z-index: 2; /* Overlay should be above background image */
+  background-color: rgba(0, 0, 0, 0.4); /* Dark overlay, 40% opacity */
+  z-index: 2;
 }
 
 .hero-grid {
