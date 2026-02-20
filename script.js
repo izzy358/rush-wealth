@@ -21,7 +21,7 @@
   var observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
+        entry.target.classList.add("active");
         observer.unobserve(entry.target);
       }
     });
